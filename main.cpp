@@ -1,5 +1,3 @@
-#define CPPHTTPLIB_OPENSSL_SUPPORT
-
 #include <iostream>
 #include <stdio.h>
 
@@ -11,7 +9,7 @@ using namespace std;
 using namespace httplib;
 
 Server svr;
-Client cli("discord.com");
+Client cli("https://discord.com");
 
 bool to_bot(json &data){
     string payload = data.dump();
