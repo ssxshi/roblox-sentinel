@@ -1,3 +1,5 @@
+#define CPPHTTPLIB_OPENSSL_SUPPORT
+
 #include <iostream>
 #include <stdio.h>
 
@@ -9,7 +11,7 @@ using namespace std;
 using namespace httplib;
 
 Server svr;
-Client cli("https://discord.com");
+Client cli("discord.com");
 
 bool to_bot(json &data){
     string payload = data.dump();
@@ -31,7 +33,7 @@ void handle_alert(const Request &req, Response &res){
 }
 
 int main(){
-    svr.Post("/alert", handle_alert);
+    svr.Post("/sentinel", handle_alert);
     svr.listen("0.0.0.0", 8080);
 
     exit(0);
